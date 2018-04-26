@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { InicioPage } from '../pages/inicio/inicio';
-import { CorizacionesPage } from '../pages/corizaciones/corizaciones';
+import { CotizarPage } from '../pages/cotizar/cotizar';
 import { PedidosPage } from '../pages/pedidos/pedidos';
 import { EntregasPage } from '../pages/entregas/entregas';
 
@@ -23,7 +23,7 @@ export class MyApp {
 
   this.pages = [
     {titulo:"Inicio", component: InicioPage, icon:"home"},
-    {titulo:"Cotizaciones", component: CorizacionesPage, icon:"construct"},
+    {titulo:"Cotizaciones", component: CotizarPage, icon:"construct"},
     {titulo:"Pedidos", component: PedidosPage, icon:"clipboard"},
     {titulo:"Entregas", component: EntregasPage, icon:"pin"},
 

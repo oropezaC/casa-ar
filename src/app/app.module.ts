@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { InicioPage } from '../pages/inicio/inicio';
-import { CorizacionesPage } from '../pages/corizaciones/corizaciones';
+import { CotizarPage } from '../pages/cotizar/cotizar';
 import { PedidosPage } from '../pages/pedidos/pedidos';
 import { EntregasPage } from '../pages/entregas/entregas';
 
@@ -15,7 +15,7 @@ import { EntregasPage } from '../pages/entregas/entregas';
   declarations: [
     MyApp,
     InicioPage,
-    CorizacionesPage,
+    CotizarPage,
     PedidosPage,
     EntregasPage
   ],
@@ -27,7 +27,7 @@ import { EntregasPage } from '../pages/entregas/entregas';
   entryComponents: [
     MyApp,
     InicioPage,
-    CorizacionesPage,
+    CotizarPage,
     PedidosPage,
     EntregasPage
   ],
