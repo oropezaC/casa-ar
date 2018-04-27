@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
-/**
- * Generated class for the CotizarPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ProductoPage } from '../producto/producto';
 
 @IonicPage()
 @Component({
@@ -41,6 +36,7 @@ export class CotizarPage {
 
   sendCot(){
   	console.log(this.cotiza.value)
+    this.navCtrl.push(ProductoPage)
   }
 
 }

@@ -9,7 +9,7 @@ import { InicioPage } from '../pages/inicio/inicio';
 import { CotizarPage } from '../pages/cotizar/cotizar';
 import { PedidosPage } from '../pages/pedidos/pedidos';
 import { EntregasPage } from '../pages/entregas/entregas';
-
+import { ProductoPage } from '../pages/producto/producto';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,9 @@ import { EntregasPage } from '../pages/entregas/entregas';
     InicioPage,
     CotizarPage,
     PedidosPage,
-    EntregasPage
+    EntregasPage,
+
+    ProductoPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,9 @@ import { EntregasPage } from '../pages/entregas/entregas';
     InicioPage,
     CotizarPage,
     PedidosPage,
-    EntregasPage
+    EntregasPage,
+
+    ProductoPage
   ],
   providers: [
     StatusBar,
