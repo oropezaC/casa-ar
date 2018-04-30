@@ -24,8 +24,9 @@ export class CotizarPage {
   		calle: 		['', Validators.required],
   		numero: 	['', Validators.required],
   		colonia: 	['', Validators.required],
-  		telefono: 	['', Validators.required],
+  		telefono: ['', Validators.required],
   		email: 		[''],
+      token:    [''],
 
   	});
   }
@@ -35,8 +36,22 @@ export class CotizarPage {
   }
 
   sendCot(){
-  	console.log(this.cotiza.value)
-    this.navCtrl.push(ProductoPage)
+    let tok = this.makeToken();
+    this.cotiza.controls['token'].setValue( tok );
+  	this.navCtrl.push(ProductoPage, { cliente: this.cotiza.value})
   }
+
+
+  makeToken() {
+    let p1 =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let token = ""
+
+    for( var i=0; i < 8; i++ )
+    token += p1.charAt(Math.floor(Math.random() * p1.length));
+
+    return token
+  }
+
+
 
 }
