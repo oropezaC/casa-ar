@@ -5,7 +5,6 @@
     </ion-toolbar>
   </ion-header>
 	<ion-content>
-		<!--<img src="/assets/imgs/coverlogo.jpg">-->
 		<ion-list>
 			<button ion-item *ngFor= "let page of pages" (click)="goToPage(page.component)" menuClose>
 				<ion-icon item-left name="{{ page.icon }}">

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
+import {DetallePage} from '../detalle/detalle';
+
 @IonicPage()
 @Component({
   selector: 'page-producto',
@@ -10,6 +12,8 @@ export class ProductoPage {
 
   producto: string = "Mesas";
   carpa: string = "0";
+  observaciones : any;
+
 
   public isToggled: boolean;
   
@@ -148,6 +152,7 @@ export class ProductoPage {
           'meseros' : this.mesero,
           'carpa' : this.carpa,
         },
+        'observaciones' : this.observaciones,
         'total': this.total,
     }
 
@@ -172,7 +177,9 @@ export class ProductoPage {
         {
           text: 'Aceptar',
           handler: () => {
-            console.log('Agree clicked',pedido);
+            console.log('Pedido Hecho',pedido);
+            this.navCtrl.push(DetallePage, { datosPedido: pedido})
+
           }
         }
       ]

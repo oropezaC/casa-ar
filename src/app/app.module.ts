@@ -4,12 +4,15 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { GoogleMaps } from '@ionic-native/google-maps';
+
 import { MyApp } from './app.component';
 import { InicioPage } from '../pages/inicio/inicio';
 import { CotizarPage } from '../pages/cotizar/cotizar';
 import { PedidosPage } from '../pages/pedidos/pedidos';
 import { EntregasPage } from '../pages/entregas/entregas';
 import { ProductoPage } from '../pages/producto/producto';
+import { DetallePage } from '../pages/detalle/detalle';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { ProductoPage } from '../pages/producto/producto';
     PedidosPage,
     EntregasPage,
 
-    ProductoPage
+    ProductoPage,
+    DetallePage
   ],
   imports: [
     BrowserModule,
@@ -33,11 +37,13 @@ import { ProductoPage } from '../pages/producto/producto';
     PedidosPage,
     EntregasPage,
 
-    ProductoPage
+    ProductoPage,
+    DetallePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
