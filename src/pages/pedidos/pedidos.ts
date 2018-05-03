@@ -6,6 +6,8 @@ import {DetallePedidoPage} from '../detalle-pedido/detalle-pedido';
 import{PedidosServiceProvider} from '../../providers/pedidos-service/pedidos-service';
 
 import * as moment from 'moment';
+import 'moment/locale/es';
+
 
 @IonicPage()
 @Component({
@@ -25,20 +27,20 @@ export class PedidosPage {
     public ws : PedidosServiceProvider
     ) {
       this.now = { fecha : moment().toDate()}
-      this.fecha = moment(this.now.fecha).format('DD-MM-YYYY')
+      this.fecha = moment(this.now.fecha).format('Do MMMM YYYY')
+
     }
 
   ionViewDidLoad() {
     this.ws.getAll(this.now).subscribe(data =>{
       this.pedido = data;
-      console.log(this.pedido)
     })
   }
 
   getPedido(d){
-    this.ws.getOne(d).subscribe(res =>{
+    this.ws.getOne(d.token).subscribe(res =>{
       this.item = res;
-      this.navCtrl.push(DetallePedidoPage, { pedidos : this.item})
+        this.navCtrl.push(DetallePedidoPage, {datos:d, pedidos : this.item})
     })
   }
 

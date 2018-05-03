@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the EntregasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import{PedidosServiceProvider} from '../../providers/pedidos-service/pedidos-service';
+
+import * as moment from 'moment';
+import 'moment/locale/es';
 
 @IonicPage()
 @Component({
@@ -15,11 +13,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EntregasPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    public now : any;
+    public deliver : any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public ws : PedidosServiceProvider) {
+    this.now = { fecha : moment().toDate()}
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EntregasPage');
+    this.ws.getDeliv(this.now).subscribe(data =>{
+        this.deliver = data;
+        console.log("hey",this.deliver)
+    })
   }
 
 }

@@ -16,7 +16,7 @@ export class ProductoPage {
 
 
   public isToggled: boolean;
-  
+
   //Mesas
   public tableTab : any;
   public tableRound : any;
@@ -37,12 +37,12 @@ export class ProductoPage {
 
 
   constructor(
-      public navCtrl: NavController, 
+      public navCtrl: NavController,
       public navParams: NavParams,
       public alertCtrl: AlertController) {
 
   	this.cliente = this.navParams.get('cliente')
-    
+
     this.isToggled = false;
 
     this.tableTab = 0;
@@ -177,9 +177,7 @@ export class ProductoPage {
         {
           text: 'Aceptar',
           handler: () => {
-            console.log('Pedido Hecho',pedido);
-            this.navCtrl.push(DetallePage, { datosPedido: pedido})
-
+          this.navCtrl.push(DetallePage, { datosPedido: pedido})
           }
         }
       ]

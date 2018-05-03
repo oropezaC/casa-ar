@@ -22,7 +22,7 @@
     </ion-thumbnail>
     <h2>{{p.datos.cliente}}</h2>
     <p>Costo total • {{p.total | currency}}</p>
-    <button ion-button clear item-end (click)="getPedido(p.datos.token)">View</button>
+    <button ion-button clear item-end (click)="getPedido(p.datos)">View</button>
   </ion-item>
 </ion-list>
 

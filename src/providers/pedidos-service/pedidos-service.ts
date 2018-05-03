@@ -16,4 +16,8 @@ export class PedidosServiceProvider {
   getOne(token){
     return this.http.get('http://localhost:3000/pedidos' + '/' +token)
   }
+
+  getDeliv(fecha){
+    return this.http.post('http://localhost:3000/entregas',fecha)
+  }
 }

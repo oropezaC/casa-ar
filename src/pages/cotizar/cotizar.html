@@ -14,48 +14,53 @@
 	<form [formGroup]="cotiza" (ngSubmit)="sendCot()">
 		<ion-list>
 
+				<ion-item>
+	      <ion-label>Fecha</ion-label>
+	      <ion-datetime displayFormat="DD MMM YYYY" formControlName="date" clearInput="true"></ion-datetime>
+	    </ion-item>
+
 			<ion-item>
 				<ion-label floating>Cliente</ion-label>
-				<ion-input 
-				class="capitalize" 
-				type="text" 
-				formControlName="cliente" 
+				<ion-input
+				class="capitalize"
+				type="text"
+				formControlName="cliente"
 				clearInput="true">
 			</ion-input>
 		</ion-item>
 
 		<ion-item>
 			<ion-label floating>Calle</ion-label>
-			<ion-input 
-			type="text" 
-			formControlName="calle" 
+			<ion-input
+			type="text"
+			formControlName="calle"
 			clearInput="true">
 		</ion-input>
 	</ion-item>
 
 	<ion-item>
 		<ion-label floating>Numero Int/Ext</ion-label>
-		<ion-input 
-		type="text" 
-		formControlName="numero" 
+		<ion-input
+		type="text"
+		formControlName="numero"
 		clearInput="true">
 	</ion-input>
 </ion-item>
 
 <ion-item>
 	<ion-label floating>Colonia</ion-label>
-	<ion-input 
-	type="text" 
-	formControlName="colonia" 
+	<ion-input
+	type="text"
+	formControlName="colonia"
 	clearInput="true">
 </ion-input>
 </ion-item>
 
 <ion-item>
 	<ion-label floating>Telefono</ion-label>
-	<ion-input 
-	type="number" 
-	formControlName="telefono" 
+	<ion-input
+	type="number"
+	formControlName="telefono"
 	clearInput="true"
 	maxlength="10">
 </ion-input>
@@ -63,18 +68,18 @@
 
 <ion-item>
 	<ion-label floating>Email</ion-label>
-	<ion-input 
-	type="email" 
-	formControlName="email" 
+	<ion-input
+	type="email"
+	formControlName="email"
 	clearInput="true">
 </ion-input>
 </ion-item>
 
 </ion-list>
 
-<button 
-type="submit" 
-ion-button large block full icon-left 
+<button
+type="submit"
+ion-button large block full icon-left
 [disabled]="!cotiza.valid" >
 <ion-icon name="send"></ion-icon>
 Enviar

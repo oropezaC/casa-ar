@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+// import * as moment from 'moment';
 
 
 @IonicPage()
@@ -10,14 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetallePedidoPage {
   public datos : any;
-
+  public client : any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.datos = [];
+    this.client = {};
 
   }
 
   ionViewDidLoad() {
     this.datos.push(this.navParams.get('pedidos'))
+    this.client = this.navParams.get('datos');
   }
 
 }

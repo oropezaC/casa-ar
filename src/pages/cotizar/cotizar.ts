@@ -13,13 +13,14 @@ export class CotizarPage {
 
   private cotiza : FormGroup;
 
-  constructor( 
+  constructor(
   	public navCtrl: NavController,
   	public navParams: NavParams,
   	private formBuilder: FormBuilder) {
 
   	this.cotiza = this.formBuilder.group({
 
+      date: 	['', Validators.required],
   		cliente: 	['', Validators.required],
   		calle: 		['', Validators.required],
   		numero: 	['', Validators.required],

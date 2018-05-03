@@ -8,6 +8,77 @@
 </ion-header>
 
 
-<ion-content padding>
-	<div id="map_canvas"></div>
+<ion-content>
+	<!-- <div id="map_canvas"></div> -->
+	<ion-card>
+		<ion-item>
+		    <ion-avatar item-start>
+		      <img src="/assets/imgs/batman.png">
+		    </ion-avatar>
+		    <h2>{{datos.datos.cliente}}</h2>
+		    <h2>{{datos.datos.date}}</h2>
+			</ion-item>
+
+		<ion-card-content>
+		<ion-list>
+				<ion-item>
+					Tablon
+		      <ion-badge item-end>{{datos.productos.tablon}}</ion-badge>
+				</ion-item>
+				<ion-item >
+		      Mesa Redonda
+		      <ion-badge item-end>{{datos.productos.redonda}}</ion-badge>
+		    </ion-item>
+		    <ion-item >
+		      Mesa Cristal
+		      <ion-badge item-end>{{datos.productos.cristal}}</ion-badge>
+		    </ion-item>
+		    <ion-item >
+		      Inflable Chico
+		      <ion-badge item-end>{{datos.productos.inflableChico}}</ion-badge>
+		    </ion-item>
+		    <ion-item >
+		      Inflable Grande
+		      <ion-badge item-end>{{datos.productos.inflableGrande}}</ion-badge>
+		    </ion-item>
+		    <ion-item >
+		      Brincolin
+		      <ion-badge item-end>{{datos.productos.brincolin}}</ion-badge>
+		    </ion-item>
+		    <ion-item>
+		      Carpa
+		      <ion-badge item-end>{{datos.productos.carpa}} Personas</ion-badge>
+		    </ion-item>
+		    <ion-item>
+		      Meseros
+		      <ion-badge item-end>{{datos.productos.meseros}} </ion-badge>
+		    </ion-item>
+			</ion-list>
+		</ion-card-content>
+		<ion-item>
+			<h2 item-start>Total:</h2>
+			<h2 item-end>{{datos.total | currency}}</h2>
+		</ion-item>
+	</ion-card>
+	<ion-grid>
+		<ion-row>
+       <ion-col>
+         <div>
+					 <button ion-button icon-left full large color="danger">
+						 <ion-icon name="close"></ion-icon>
+					 Cancelar
+				 </button>
+			 </div>
+       </ion-col>
+       <ion-col>
+         <div>
+					 <button ion-button icon-left full large color="secundary">
+						 <ion-icon name="checkbox"></ion-icon>
+						 Guardar
+					 </button>
+				 </div>
+       </ion-col>
+     </ion-row>
+</ion-grid>
+
 </ion-content>
