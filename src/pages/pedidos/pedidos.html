@@ -1,4 +1,3 @@
-
 <ion-header>
 
   <ion-navbar color="primary">
@@ -12,5 +11,20 @@
 
 
 <ion-content padding>
+  <ion-item>
+    <h2 item-start>Fecha</h2><h2 class="fecha">{{fecha}}</h2>
+  </ion-item>
+
+<ion-list>
+  <ion-item  *ngFor="let p of pedido">
+    <ion-thumbnail item-start>
+      <img src="/assets/imgs/new-product.png">
+    </ion-thumbnail>
+    <h2>{{p.datos.cliente}}</h2>
+    <p>Costo total • {{p.total | currency}}</p>
+    <button ion-button clear item-end (click)="getPedido(p.datos.token)">View</button>
+  </ion-item>
+</ion-list>
+
 
 </ion-content>

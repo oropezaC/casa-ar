@@ -16,17 +16,16 @@ export class MyApp {
   public rootPage : any;
 
   public pages: Array<{ titulo: string ,component: any, icon:string}>
-  
+
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 
-   this.rootPage = InicioPage; 
+   this.rootPage = InicioPage;
 
   this.pages = [
     {titulo:"Inicio", component: InicioPage, icon:"home"},
-    {titulo:"Cotizaciones", component: CotizarPage, icon:"construct"},
+    {titulo:"Cotizador", component: CotizarPage, icon:"construct"},
     {titulo:"Pedidos", component: PedidosPage, icon:"clipboard"},
     {titulo:"Entregas", component: EntregasPage, icon:"pin"},
-
   ]
 
     platform.ready().then(() => {
@@ -42,4 +41,3 @@ export class MyApp {
   }
 
 }
-

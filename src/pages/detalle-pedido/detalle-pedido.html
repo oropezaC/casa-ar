@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar color="primary" no-border-bottom>
+    <ion-title>Detalle</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list *ngFor="let i of datos">
+    <ion-item >
+      Tablon
+      <ion-badge item-end>{{i.tablon}}</ion-badge>
+    </ion-item>
+    <ion-item >
+      Mesa Redonda
+      <ion-badge item-end>{{i.redonda}}</ion-badge>
+    </ion-item>
+    <ion-item >
+      Mesa Cristal
+      <ion-badge item-end>{{i.cristal}}</ion-badge>
+    </ion-item>
+    <ion-item >
+      Inflable Chico
+      <ion-badge item-end>{{i.inflableChico}}</ion-badge>
+    </ion-item>
+    <ion-item >
+      Inflable Grande
+      <ion-badge item-end>{{i.inflableGrande}}</ion-badge>
+    </ion-item>
+    <ion-item >
+      Brincolin
+      <ion-badge item-end>{{i.brincolin}}</ion-badge>
+    </ion-item>
+    <ion-item>
+      Carpa
+      <ion-badge item-end>{{i.carpa}} Personas</ion-badge>
+    </ion-item>
+    <ion-item>
+      Meseros
+      <ion-badge item-end>{{i.meseros}} </ion-badge>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
