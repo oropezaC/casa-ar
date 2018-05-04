@@ -1,6 +1,6 @@
 
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="them">
     <button ion-button menuToggle>
       <ion-icon name="menu"> </ion-icon>
     </button>
@@ -9,9 +9,9 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-card *ngFor="let d of deliver">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.287788006578!2d-99.04334248566633!3d19.486250444013578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fae21a0524f3%3A0x77ecd7f430247986!2sValle+de+Salvin%2C+Valle+de+Aragon+2da+Secc%2C+57100+Nezahualc%C3%B3yotl%2C+M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1525362545789" width="300" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.287788006578!2d-99.04334248566633!3d19.486250444013578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fae21a0524f3%3A0x77ecd7f430247986!2sValle+de+Salvin%2C+Valle+de+Aragon+2da+Secc%2C+57100+Nezahualc%C3%B3yotl%2C+M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1525362545789" width="350" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
     <ion-item>
       <ion-icon name="planet" item-start large></ion-icon>
       <h2>{{d.datos.cliente}}</h2>
@@ -26,5 +26,9 @@
         Start
       </button>
     </ion-item>
+  </ion-card>
+  <ion-card *ngIf="flag">
+    <ion-card-title class="titulo">No Hay Entregas</ion-card-title>
+    <img src="/assets/imgs/not.png" class="init">
   </ion-card>
 </ion-content>

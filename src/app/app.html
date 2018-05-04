@@ -1,12 +1,12 @@
 <ion-menu [content]="NAV">
 <ion-header>
-    <ion-toolbar color="primary">
+    <ion-toolbar color="them">
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
-	<ion-content>
+	<ion-content class="tool">
 		<ion-list>
-			<button ion-item *ngFor= "let page of pages" (click)="goToPage(page.component)" menuClose>
+			<button class="tool" ion-item *ngFor= "let page of pages" (click)="goToPage(page.component)" menuClose>
 				<ion-icon item-left name="{{ page.icon }}">
 					{{page.titulo}}
 				</ion-icon>

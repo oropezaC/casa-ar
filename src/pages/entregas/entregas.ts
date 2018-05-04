@@ -15,14 +15,22 @@ export class EntregasPage {
 
     public now : any;
     public deliver : any;
+    public flag : boolean;
+    public res : any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public ws : PedidosServiceProvider) {
     this.now = { fecha : moment().toDate()}
+    this.flag = false;
   }
 
   ionViewDidLoad() {
     this.ws.getDeliv(this.now).subscribe(data =>{
-        this.deliver = data;
-        console.log("hey",this.deliver)
+      this.res = data
+        if(this.res.length == 0){
+          this.flag = true;
+        }else{
+          this.flag = false;
+          this.deliver = data;
+        }
     })
   }
 

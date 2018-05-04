@@ -6,18 +6,25 @@ import 'rxjs/add/operator/map';
 export class PedidosServiceProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello PedidosServiceProvider Provider');
   }
 
   getAll(fecha){
     return this.http.post('http://localhost:3000/pedidos',fecha)
   }
 
-  getOne(token){
-    return this.http.get('http://localhost:3000/pedidos' + '/' +token)
-  }
 
   getDeliv(fecha){
     return this.http.post('http://localhost:3000/entregas',fecha)
+  }
+
+  saveCot(datos){
+    return this.http.post('http://localhost:3000/cotizacion',datos)
+  }
+
+  getOne(token){
+    return this.http.get('http://localhost:3000/pedidos' + '/' +token)
+  }
+  changeSt(token){
+    return this.http.put('http://localhost:3000/pedidos' + '/' +token)
   }
 }

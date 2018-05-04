@@ -1,30 +1,35 @@
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="them">
   <button ion-button menuToggle>
   	<ion-icon name="menu"> </ion-icon>
   </button>
-    <ion-title>Pedidos</ion-title>
+    <ion-title>Pedidos </ion-title>
   </ion-navbar>
 
 </ion-header>
+<ion-content>
 
+<ion-card >
+    <ion-item class="cardTitle">
+      <h2 item-start>Fecha</h2><h2 class="fecha">{{fecha}}</h2>
+    </ion-item>
+</ion-card>
 
-<ion-content padding>
+<ion-card *ngFor="let p of pedido">
   <ion-item>
-    <h2 item-start>Fecha</h2><h2 class="fecha">{{fecha}}</h2>
-  </ion-item>
+      <ion-thumbnail item-start>
+        <img src="/assets/imgs/new-product.png">
+      </ion-thumbnail>
+      <h2>{{p.datos.cliente}}</h2>
+      <p>{{p.total | currency}}</p>
+      <button ion-button clear item-end (click)="getPedido(p.datos)">View</button>
+    </ion-item>
+</ion-card>
 
-<ion-list>
-  <ion-item  *ngFor="let p of pedido">
-    <ion-thumbnail item-start>
-      <img src="/assets/imgs/new-product.png">
-    </ion-thumbnail>
-    <h2>{{p.datos.cliente}}</h2>
-    <p>Costo total • {{p.total | currency}}</p>
-    <button ion-button clear item-end (click)="getPedido(p.datos)">View</button>
-  </ion-item>
-</ion-list>
-
+<ion-card *ngIf="flag">
+  <ion-card-title class="titulo">No Hay Entregas</ion-card-title>
+  <img src="/assets/imgs/not.png" class="init">
+</ion-card>
 
 </ion-content>

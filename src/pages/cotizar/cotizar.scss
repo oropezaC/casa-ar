@@ -1,9 +1,11 @@
 page-cotizar {
 	.capitalize{
 		text-transform:capitalize;
-	}
-	.titulo{
-		position: absolute;
-		text-transform:capitalize;
+	},
+	.title{
+		text-align:center;
+	},
+	.back{
+		background-color: #F6CECE;
 	}
 }

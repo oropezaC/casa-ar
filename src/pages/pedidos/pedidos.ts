@@ -20,7 +20,8 @@ export class PedidosPage {
   public item : any;
   public now : any;
   public fecha : any;
-
+  public flag : boolean;
+  public res : any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -33,7 +34,13 @@ export class PedidosPage {
 
   ionViewDidLoad() {
     this.ws.getAll(this.now).subscribe(data =>{
-      this.pedido = data;
+      this.res = data;
+      if(this.res.length == 0){
+        this.flag = true;
+      }else{
+        this.flag = false;
+        this.pedido = data;
+      }
     })
   }
 

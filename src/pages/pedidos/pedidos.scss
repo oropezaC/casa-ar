@@ -1,5 +1,21 @@
 page-pedidos {
   .fecha{
     text-align: right;
-  }
+  },
+  .cardTitle{
+    background-color: #80CBC4;
+  },
+  .cardPedido{
+    background-color: #CED8F6;
+  },
+  .titulo{
+    color:#333;
+    text-align:center;
+  },
+  .init{
+		height: 45vh;
+		  width: auto;
+		  margin: auto;
+		  display: block;
+	}
 }

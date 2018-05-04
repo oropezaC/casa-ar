@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController  } from 'ionic-angular';
+
+import{PedidosServiceProvider} from '../../providers/pedidos-service/pedidos-service';
+
+import {PedidosPage} from '../pedidos/pedidos';
 
 // import {
 //   GoogleMaps,
@@ -20,18 +24,44 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class DetallePage {
 
 	public datos : any;
+  public res : any;
 	// map: GoogleMap;
 
   constructor(
   	public navCtrl: NavController,
-   	public navParams: NavParams) {
+   	public navParams: NavParams,
+    public ws : PedidosServiceProvider,
+    public alertCtrl: AlertController) {
 
   	this.datos = this.navParams.get('datosPedido');
-  	console.log(this.datos)
   }
 
   ionViewDidLoad() {
     // this.loadMap();
+  }
+
+  saveCotizacion(d){
+    this.ws.saveCot(d).subscribe(data=>{
+      this.res = data
+      if(this.res.status == 1){
+        let alert = this.alertCtrl.create({
+          title: 'Datos Guardados',
+          subTitle: 'Gracias',
+          buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navCtrl.setRoot(PedidosPage)
+          }
+        }
+      ]
+        });
+        alert.present();
+
+      }else{
+        console.log("no")
+      }
+    })
   }
 
 

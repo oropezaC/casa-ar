@@ -1,7 +1,7 @@
 
 <ion-header>
 
-	<ion-navbar color="primary">
+	<ion-navbar color="them">
 		<button ion-button menuToggle>
 			<ion-icon name="menu"> </ion-icon>
 		</button>
@@ -11,13 +11,14 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+	<ion-card>
 	<img src="/assets/imgs/logocover.jpg" class="init">
-	<h1 class="titulo">Alquiladora Casa AR</h1>
-	<ion-list>
+	<ion-card-title class="titulo">Alquiladora Casa AR</ion-card-title>
+</ion-card>
 
-		<ion-item *ngFor="let v of views" (click)="goToPage(v.component)">
+	<ion-card *ngFor="let v of views">
+		<ion-item (click)="goToPage(v.component)">
 			<ion-thumbnail item-start>
 				<img src="{{v.img}}">
 			</ion-thumbnail>
@@ -25,8 +26,7 @@
 			<p>Productos • Servicios</p>
 			<button ion-button clear item-end>View</button>
 		</ion-item>
-
-	</ion-list>
+	</ion-card>
 
 
 </ion-content>
