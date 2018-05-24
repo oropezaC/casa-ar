@@ -42,23 +42,18 @@ export class ProductoPage {
       public alertCtrl: AlertController) {
 
   	this.cliente = this.navParams.get('cliente')
-
     this.isToggled = false;
-
     this.tableTab = 0;
     this.tableRound = 0;
     this.tableCrys = 0;
-
     this.infCh = 0;
     this.infGd = 0;
     this.brincolin = 0;
-
     this.mesero = 0;
-
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProductoPage');
+
   }
 
 

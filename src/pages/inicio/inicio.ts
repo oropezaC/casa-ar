@@ -12,18 +12,18 @@ import { EntregasPage } from '../entregas/entregas'
 })
 export class InicioPage {
   public views: Array<{ title: string ,component: any, img:string}>
-
+  public numero:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.views = [
-      {title:"Cotizador", component: CotizarPage, img:"/assets/imgs/goal.png"},
-      {title:"Pedidos", component: PedidosPage, img:"/assets/imgs/order.png"},
-      {title:"Entregas", component: EntregasPage, img:"/assets/imgs/delivery-truck.png"},
+      {title:"Cotizador", component: CotizarPage, img:"assets/imgs/goal.png"},
+      {title:"Pedidos", component: PedidosPage, img:"assets/imgs/order.png"},
+      {title:"Entregas", component: EntregasPage, img:"assets/imgs/delivery-truck.png"},
     ]
+    this.numero = 9;
   }
 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad InicioPage');
   }
 
   goToPage(v){

@@ -1,91 +1,42 @@
 <ion-header>
-
 	<ion-navbar color="them">
 		<button ion-button menuToggle>
 			<ion-icon name="menu"> </ion-icon>
 		</button>
-		<ion-title>Cotizaciones</ion-title>
+		<ion-title>Datos de Cliente</ion-title>
 	</ion-navbar>
-
 </ion-header>
 
 <ion-content>
-	<ion-card>
-		<ion-card-title class="title">Datos Pedido</ion-card-title>
-
-		<form [formGroup]="cotiza" (ngSubmit)="sendCot()">
-			<ion-list>
-
-				<ion-item>
-					<ion-label>Fecha</ion-label>
-					<ion-datetime displayFormat="DD MMM YYYY" formControlName="date" clearInput="true"></ion-datetime>
-				</ion-item>
-
-				<ion-item>
-					<ion-label floating>Cliente</ion-label>
-					<ion-input
-					class="capitalize"
-					type="text"
-					formControlName="cliente"
-					clearInput="true">
-				</ion-input>
-			</ion-item>
-
-			<ion-item>
-				<ion-label floating>Calle</ion-label>
-				<ion-input
-				type="text"
-				formControlName="calle"
-				clearInput="true">
-			</ion-input>
-		</ion-item>
-
-		<ion-item>
-			<ion-label floating>Numero Int/Ext</ion-label>
-			<ion-input
-			type="text"
-			formControlName="numero"
-			clearInput="true">
-		</ion-input>
-	</ion-item>
-
-	<ion-item>
-		<ion-label floating>Colonia</ion-label>
-		<ion-input
-		type="text"
-		formControlName="colonia"
-		clearInput="true">
-	</ion-input>
-</ion-item>
-
-<ion-item>
-	<ion-label floating>Telefono</ion-label>
-	<ion-input
-	type="number"
-	formControlName="telefono"
-	clearInput="true"
-	maxlength="10">
-</ion-input>
-</ion-item>
-
-<ion-item>
-	<ion-label floating>Email</ion-label>
-	<ion-input
-	type="email"
-	formControlName="email"
-	clearInput="true">
-</ion-input>
-</ion-item>
-</ion-list>
-<ion-item>
-	<button
-	type="submit"
-	ion-button large block full icon-left
-	[disabled]="!cotiza.valid" >
-	<ion-icon name="send"></ion-icon>
-	Enviar
-</button>
-</ion-item>
-</form>
-</ion-card>
+  <ion-card>
+    <img src="assets/imgs/contact.png" class="imgCard"/>
+    <ion-card-content class="up">
+      <form [formGroup]="cotiza" (ngSubmit)="sendCot()">
+        <ion-list>
+          <ion-item>
+            <ion-label>Fecha</ion-label>
+            <ion-datetime displayFormat="DD MMM YYYY" formControlName="date" clearInput="true"></ion-datetime>
+          </ion-item>
+          <ion-item>
+              <ion-label fixed>Cliente</ion-label>
+              <ion-input class="capitalize" type="text" formControlName="cliente" clearInput="true"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label fixed>Telefono</ion-label>
+              <ion-input type="number" formControlName="telefono" clearInput="true" maxlength="10"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label fixed>Email</ion-label>
+              <ion-input type="email" formControlName="email" clearInput="true"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-item class="btn">
+          <button type="submit" ion-button large block full icon-left [disabled]="!cotiza.valid" >
+            <ion-icon name="send"></ion-icon>
+            Siguiente
+          </button>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

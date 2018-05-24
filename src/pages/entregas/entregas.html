@@ -8,27 +8,25 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content>
+  <h2 class="titulo">Entregas Pendientes</h2>
   <ion-card *ngFor="let d of deliver">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.287788006578!2d-99.04334248566633!3d19.486250444013578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fae21a0524f3%3A0x77ecd7f430247986!2sValle+de+Salvin%2C+Valle+de+Aragon+2da+Secc%2C+57100+Nezahualc%C3%B3yotl%2C+M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1525362545789" width="350" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <!-- <div  #map id="map" style="width: auto; height: 200px;"></div> -->
     <ion-item>
-      <ion-icon name="planet" item-start large></ion-icon>
+      <ion-thumbnail item-start>
+				<img src="assets/imgs/house.png">
+			</ion-thumbnail>
       <h2>{{d.datos.cliente}}</h2>
-      <p><ion-icon item-start name="locate" small></ion-icon>{{d.datos.calle}} {{d.datos.numero}} {{d.datos.colonia}}</p>
-      <p><ion-icon item-start name="call" small></ion-icon> {{d.datos.telefono}}</p>
-    </ion-item>
-    <ion-item>
-      <span item-left>18 min</span>
-      <span item-left>(2.6 mi)</span>
-      <button ion-button icon-left clear item-end>
-        <ion-icon name="navigate"></ion-icon>
-        Start
-      </button>
+      <p>{{d.datos.calle}} {{d.datos.numero}} {{d.datos.colonia}} </p>
+      <p>{{d.datos.telefono}}</p>
+      <button ion-button clear item-end (click)="goToPage(d)">Comenzar</button>
     </ion-item>
   </ion-card>
-  <ion-card *ngIf="flag">
-    <ion-card-title class="titulo">No Hay Entregas</ion-card-title>
-    <img src="/assets/imgs/not.png" class="init">
-  </ion-card>
+
+      <ion-card *ngIf="flag">
+        <ion-card-title class="titulo">No Hay Entregas</ion-card-title>
+        <img src="assets/imgs/not.png" class="init">
+      </ion-card>
+
+
 </ion-content>

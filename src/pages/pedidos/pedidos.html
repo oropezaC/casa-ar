@@ -19,7 +19,7 @@
 <ion-card *ngFor="let p of pedido">
   <ion-item>
       <ion-thumbnail item-start>
-        <img src="/assets/imgs/new-product.png">
+        <img src="assets/imgs/new-product.png">
       </ion-thumbnail>
       <h2>{{p.datos.cliente}}</h2>
       <p>{{p.total | currency}}</p>
@@ -29,7 +29,7 @@
 
 <ion-card *ngIf="flag">
   <ion-card-title class="titulo">No Hay Entregas</ion-card-title>
-  <img src="/assets/imgs/not.png" class="init">
+  <img src="assets/imgs/not.png" class="init">
 </ion-card>
 
 </ion-content>

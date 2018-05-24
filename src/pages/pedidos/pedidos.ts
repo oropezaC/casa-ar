@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,LoadingController } from 'ionic-angular';
 
 import {DetallePedidoPage} from '../detalle-pedido/detalle-pedido';
 
@@ -22,19 +22,26 @@ export class PedidosPage {
   public fecha : any;
   public flag : boolean;
   public res : any;
+  public loader : any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public ws : PedidosServiceProvider
+    public ws : PedidosServiceProvider,
+    public loadingCtrl: LoadingController
     ) {
       this.now = { fecha : moment().toDate()}
       this.fecha = moment(this.now.fecha).format('Do MMMM YYYY')
+      this.loader = this.loadingCtrl.create({
+        content: "Please wait..."
+      });
 
     }
 
   ionViewDidLoad() {
+    this.loader.present();
     this.ws.getAll(this.now).subscribe(data =>{
       this.res = data;
+      this.loader.dismiss();
       if(this.res.length == 0){
         this.flag = true;
       }else{
@@ -47,7 +54,7 @@ export class PedidosPage {
   getPedido(d){
     this.ws.getOne(d.token).subscribe(res =>{
       this.item = res;
-        this.navCtrl.push(DetallePedidoPage, {datos:d, pedidos : this.item})
+          this.navCtrl.push(DetallePedidoPage, {datos:d, pedidos : this.item})
     })
   }
 
